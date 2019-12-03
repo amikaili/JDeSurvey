@@ -221,7 +221,7 @@
 		<dependency>
 			<groupId>org.owasp.antisamy</groupId>
 			<artifactId>antisamy</artifactId>
-			<version>1.4.5</version>
+			<version>1.5.7</version>
 		</dependency>
             
         <dependency>
@@ -243,7 +243,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>1.6</source>
-					<target>1.6</target>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 		</plugins>
