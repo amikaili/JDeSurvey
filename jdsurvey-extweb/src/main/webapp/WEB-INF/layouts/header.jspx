@@ -31,6 +31,44 @@
 				</sec:authorize>
 		<div class="clear-both"><!-- Spacer --></div>
 	</div>
+	
+	<div class="header-search-form">
+			<div class="logo">
+			<img src="${banner}" alt="logo" title="logo"/>
+			</div>
+	</div>
+	
+	<div class="header-middle">
+
+			<tiles:importAttribute name="activeTab"/>	
+				<c:choose>
+					<!-- MyAccount -->
+					<c:when test="${activeTab eq 'surveys'}">
+						<c:set var="showMenu" value="true"/>
+						<c:set var="surveyscss" value="pressed"/>
+					</c:when>				
+					<c:otherwise>
+						<c:set var="showMenu" value="false"/>
+					</c:otherwise>
+				</c:choose>		
+				
+				<c:if test="${showMenu}">	
+					<ul id="topmenu" class="header-navigation">
+						<!-- Surveys -->							
+						<sec:authorize ifAnyGranted="ROLE_ADMIN,ROLE_SURVEY_ADMIN">	
+							<c:url var="url" value="/private"/>
+							<spring:url var="icon" value="/resources/images/menu/stats.png" />
+							<li class="topmenu">
+								<a href="${url}" class="${surveyscss}" ><i class="icon-bar-chart" style="margin-right:2px;"> &#160;</i><spring:message code="topmenu_surveys"/></a>
+							</li>
+						</sec:authorize>
+					</ul>
+				</c:if>
+				
+		<div class="clear-both"><!-- spacer --></div>
+	</div>
+				
+				
 </div>
 <!-- Header -->
 
