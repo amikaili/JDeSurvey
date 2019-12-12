@@ -195,17 +195,23 @@ public class PrivateSurveyController {
 					//only on entry found
 					Iterator<Survey> it = userSurveyEntries.iterator();
 					Survey survey =it.next(); // get the first and only element in the set
-					if (survey.getStatus() == SurveyStatus.I || survey.getStatus() == SurveyStatus.R) {
+					
+					
+					
+					/*** ARMAN: Modify behavior to enable edition for other status ***/
+					// if (survey.getStatus() == SurveyStatus.I || survey.getStatus() == SurveyStatus.R) {
 						//survey is incomplete or reopened
 						return "redirect:/private/" + encodeUrlPathSegment(survey.getId().toString(), httpServletRequest) +"/1";	
-					}
-					else{
+					// }
+					// else{
 						//List all entries
+						/*
 						uiModel.addAttribute("survey_base_path", "private");
 						uiModel.addAttribute("surveyDefinition", surveyDefinition);
 						uiModel.addAttribute("userSurveyEntries", userSurveyEntries);
 						return "surveys/entries";
-					}
+						*/
+					// }
 				}
 				else {
 					//multiple entries found
@@ -278,13 +284,19 @@ public class PrivateSurveyController {
 				return "accessDenied";	
 				
 			}
+
 			
+			
+			/*** ARMAN: Modify behavior to enable edition for other status ***/
 			//Check that the survey was not submitted
+			/*
 			if(! (survey.getStatus().equals(SurveyStatus.I)||survey.getStatus().equals(SurveyStatus.R) )) {
 				log.warn(UNAUTHORIZED_ATTEMPT_TO_EDIT_SUBMITTED_SURVEY_WARNING_MESSAGE + surveyId + REQUEST_PATH_WARNING_MESSAGE + httpServletRequest.getPathInfo() + FROM_USER_LOGIN_WARNING_MESSAGE + principal.getName() + FROM_IP_WARNING_MESSAGE + httpServletRequest.getLocalAddr());
 				return "accessDenied";	
-				
 			}
+			*/
+			
+			
 			
 			List<SurveyPage> surveyPages = surveyService.surveyPage_getAll(surveyId,messageSource.getMessage(DATE_FORMAT, null, LocaleContextHolder.getLocale()));
 			uiModel.addAttribute("survey_base_path", "private");
@@ -329,13 +341,19 @@ public class PrivateSurveyController {
 				
 			}
 			
+			
+			
+			/*** ARMAN: Modify behavior to enable edition for other status ***/
 			//Check that the survey was not submitted
+			/*
 			Survey dbSurvey = surveyService.survey_findById(surveyId);
 			if(! (dbSurvey.getStatus().equals(SurveyStatus.I)||dbSurvey.getStatus().equals(SurveyStatus.R) )) {
 				log.warn(UNAUTHORIZED_ATTEMPT_TO_EDIT_SUBMITTED_SURVEY_WARNING_MESSAGE + surveyId + REQUEST_PATH_WARNING_MESSAGE + httpServletRequest.getPathInfo() + FROM_USER_LOGIN_WARNING_MESSAGE + principal.getName() + FROM_IP_WARNING_MESSAGE + httpServletRequest.getLocalAddr());
 				return "accessDenied";	
-				
 			}
+			*/
+			
+			
 			
 			if(proceedAction!=null){ //submit button
 				uiModel.asMap().clear();
@@ -435,13 +453,16 @@ public class PrivateSurveyController {
 				
 			}
 			
+			
+			
+			/*** ARMAN: Modify behavior to enable edition for other status ***/
 			//Check that the survey was not submitted
+			/*
 			if(! (survey.getStatus().equals(SurveyStatus.I)||survey.getStatus().equals(SurveyStatus.R) )) {
 				log.warn(UNAUTHORIZED_ATTEMPT_TO_EDIT_SUBMITTED_SURVEY_WARNING_MESSAGE + surveyId + REQUEST_PATH_WARNING_MESSAGE + httpServletRequest.getPathInfo() + FROM_USER_LOGIN_WARNING_MESSAGE + principal.getName() + FROM_IP_WARNING_MESSAGE + httpServletRequest.getLocalAddr());
-				return "accessDenied";	
-				
+				return "accessDenied";			
 			}
-			
+			*/
 			
 			SurveyPage surveyPage  = surveyService.surveyPage_get(surveyId, order,messageSource.getMessage(DATE_FORMAT, null, LocaleContextHolder.getLocale()));
 			
@@ -501,13 +522,19 @@ public class PrivateSurveyController {
 					return "accessDenied";	
 					
 				}
+
 				
+				
+				/*** ARMAN: Modify behavior to enable edition for other status ***/
 				//Check that the survey was not submitted
+				/*
 				if(! (survey.getStatus().equals(SurveyStatus.I)||survey.getStatus().equals(SurveyStatus.R) )) {
 					log.warn(UNAUTHORIZED_ATTEMPT_TO_EDIT_SUBMITTED_SURVEY_WARNING_MESSAGE + survey.getId() + REQUEST_PATH_WARNING_MESSAGE + httpServletRequest.getPathInfo() + FROM_USER_LOGIN_WARNING_MESSAGE + principal.getName() + FROM_IP_WARNING_MESSAGE + httpServletRequest.getLocalAddr());
 					return "accessDenied";	
-					
 				}
+				*/
+				
+				
 				
 				List<SurveyPage> surveyPages = surveyService.surveyPage_getAll(surveyPage.getSurvey().getId(),messageSource.getMessage(DATE_FORMAT, null, LocaleContextHolder.getLocale()));
 				surveyPage.setSurvey(survey);
