@@ -11,19 +11,9 @@ xmlns:spring="http://www.springframework.org/tags" version="2.0">
  		<!-- Left Column -->
 		<div class="single-column">		
 				<!-- Block -->
-				<div class="block boxed">
-					<spring:message code="application_name_label"/>: <spring:message code="application_name" />
-					<br/>
-					<spring:message code="version_label" />:<spring:message code="application_version" />
-					<br/>
-					<br/>
-					<spring:message code="copyright_message"/>
-					<br/>
-					<spring:message code="website_message"/>
-					<br/>
-					<br/>
-					<spring:message code="accredidation_message" htmlEscape="false"/>
-				</div>
+				<div class="block">
+					<spring:message text="${helpContent}" htmlEscape="false"></spring:message>
+				</div>	
 				<!-- /Block -->
 		</div>
 		<!-- /Left Column -->

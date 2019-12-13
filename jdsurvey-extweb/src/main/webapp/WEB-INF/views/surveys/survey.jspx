@@ -18,7 +18,7 @@
     
     <div class="single-column">	
 		<spring:message code="date_format" var="date_format"/>	
-		<div class="block">
+		<div class="survey_block">
 			
 			<div>
 					<label class="grid-4-12"><spring:message code="com.jd.survey.domain.survey.typename_label" htmlEscape="false" /></label>
@@ -73,7 +73,7 @@
 		<div class="formee">	
 			<c:forEach items="${surveyPages}" var="page" varStatus="loop">
 			<c:set value="${pageNumb} ${loop.index+1}, ${questionNumLbl}" var="QuestionAndPageNumb"/>
-			<div class="block">
+			<div class="survey_block">
 				<h2>
 					<spring:message code="com.jd.survey.domain.survey.surveypage_label_short" htmlEscape="false"/>
 					<c:out value=" "/><c:out value="${loop.index + 1}"/><c:out value=" "/>
@@ -104,7 +104,7 @@
 							<div class="${rowStyle}">
 								<label class="questionText"><c:out value="${questionNumber}. "/><c:out value="${questionAnswer.question.questionLabel}" escapeXml="false"/></label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.booleanAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>
 						</c:when>
@@ -120,7 +120,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -134,7 +134,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -148,7 +148,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -162,7 +162,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -176,7 +176,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>		
 							</div>	
 						</c:when>
@@ -190,7 +190,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -207,7 +207,7 @@
 									</c:if>
 								</label>
 								<div class="questionAnswer"><c:out value="${questionAnswer.stringAnswerValue}"/><br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -232,7 +232,7 @@
 			 									</c:if>	
 												</c:forEach>
 									</select>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>
 							</div>	
 						</c:when>
@@ -300,7 +300,7 @@
 													</c:if>
 											</c:otherwise>
 										</c:choose>
-										<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+										<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 									</div>
 									
 											
@@ -326,7 +326,7 @@
 			 									</c:if>	
 												</c:forEach>
 									</select> 
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>	
 							</div>	
 						</c:when>
@@ -382,7 +382,7 @@
 												</c:if>
 											</c:otherwise>
 										</c:choose>
-										<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+										<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 									</div>			
 								</div>	
 							</c:when>
@@ -424,7 +424,7 @@
 											</c:forEach>
 										</tbody>
 									</table>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>	
 							</div>	
 						</c:when>
@@ -478,7 +478,7 @@
 											</c:forEach>
 										</tbody>
 									</table>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>	
 							</div>	
 						</c:when>	
@@ -502,7 +502,7 @@
 								</label>
 								<div class="questionAnswer">
 									<spring:message text="${questionAnswer.question.multimediaLink}" htmlEscape="false"  />
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>			
 							</div>	
 						</c:when>
@@ -546,7 +546,7 @@
 											</c:if>
 									</c:forEach>
 									<br/>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 								</div>			
 							</div>	
 						</c:when>
@@ -606,7 +606,7 @@
 									</c:choose>
 									
 									</div>
-									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}"/></span>
+									<span class="tipMsg"><c:out value="${questionAnswer.question.tip}" escapeXml="false"/></span>
 									</div>				
 								</div>	
 							</c:when>
