@@ -198,7 +198,7 @@ public class PrivateSurveyController {
 					
 					
 					
-					/*** ARMAN: Modify behavior to enable edition for other status ***/
+					/*** ARMAN: Modify behavior to enable edition for all status ***/
 					// if (survey.getStatus() == SurveyStatus.I || survey.getStatus() == SurveyStatus.R) {
 						//survey is incomplete or reopened
 						return "redirect:/private/" + encodeUrlPathSegment(survey.getId().toString(), httpServletRequest) +"/1";	
