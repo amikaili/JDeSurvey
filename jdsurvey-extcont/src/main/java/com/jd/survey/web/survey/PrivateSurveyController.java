@@ -350,7 +350,16 @@ public class PrivateSurveyController {
 			if(proceedAction!=null){ //submit button
 				uiModel.asMap().clear();
 				Survey survey = surveyService.survey_submit(surveyId);
-				return "redirect:/private/" + encodeUrlPathSegment(survey.getTypeId().toString(), httpServletRequest) + "?list"; 
+				
+				
+				
+				/*** ARMAN: Modify behavior to enable edition for other status ***/
+				// Redirect to the Surveys page:
+				return "redirect:/private";
+				// Instead of the Survey Entries page
+				// return "redirect:/private/" + encodeUrlPathSegment(survey.getTypeId().toString(), httpServletRequest) + "?list"; 
+			
+			
 			}
 			else
 			{
