@@ -22,7 +22,6 @@
 		        <field:display field="firstName" id="c_com.jd.survey.domain.security.User.firstName" object="${user}"/>
 		        <field:display field="middleName" id="c_com.jd.survey.domain.security.User.middleName" object="${user}"/>
 		        <field:display field="lastName" id="c_com.jd.survey.domain.security.User.lastName" object="${user}"/>
-		        <field:display field="dateOfBirth" id="c_com.jd.survey.domain.security.User.dateOfBirth" object="${user}"/>
 		        <field:display field="email" id="c_com.jd.survey.domain.security.User.email" object="${user}"/>
 		        <field:input field="password" id="c_com.jd.survey.domain.security.User.password" cssclass="grid-3-12" maxlength="20" type="password" required="true"/>
 				<field:input field="confirmPassword" id="c_com.jd.survey.domain.security.User.confirmPassword" cssclass="grid-3-12" maxlength="20" type="password" required="true"/>

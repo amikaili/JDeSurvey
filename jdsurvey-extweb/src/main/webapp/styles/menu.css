@@ -16,12 +16,9 @@ ul#topmenu ul{
 	position:absolute;
 	left:2px;
 	top:100%;
-	background-color:#dcdddf;
+	background-color:#f4f4f5;
 	margin:0;
-	border-width:1px 1px 1px 1px;
-	border-style:solid;
-	border-color:#333;
-	
+	border: none;
 }
 
 ul#topmenu li:hover>*{
@@ -40,18 +37,24 @@ font-size:0;
 float:left;
 }
 
-
-
 ul#topmenu li:hover{
 	z-index:1;
 }
 
+
+/*
+ul#topmenu li:focus{
+	z-index:1;
+}
+*/
 
 ul#topmenu ul ul{
 	position:absolute;
 	left:100%;
 	top:0;
 }
+
+
 
 ul#topmenu{
 	font-size:0;
@@ -85,7 +88,7 @@ ul#topmenu a{
 	text-align:middle;
 	text-decoration:none;
 	font:normal 12px Helvetica,sans-serif;
-	color:white;
+	color:#3a77a4;
 	cursor:pointer;
 	padding:16px 10px 0px 10px;
 	font-weight:bolder;
@@ -98,7 +101,6 @@ ul#topmenu ul li{
 }
 
 
-
 ul#topmenu ul a{
 	text-align:left;
 	padding:4px;
@@ -106,23 +108,22 @@ ul#topmenu ul a{
 	opacity:0.9;
 	background-image:none;
 	border-width:0;
-	color:white;
+	color: #3a77a4;
 	text-decoration:none;
 	text-shadow:none;
 }
 
 
 ul#topmenu li:hover>a {
-	color:#5599ff;
+	color:#274b70;
 	background-position:0 100px;
 	text-decoration:none;
 }
 
 ul#topmenu li a.pressed{
 	background-position:0 100px;
-	color:#5282b2;
+	color:#274b70;
 }
-
 
 ul#topmenu img{
 	border:none;
@@ -139,7 +140,72 @@ ul#topmenu span{
 
 ul#topmenu ul li:hover>a,ul#topmenu ul li a.pressed{
 	background-image:none;
-	color:#FF8C00;
+	color:#274b70;
 	text-decoration:none;
 }
 
+
+
+/*************************************************************/
+/*****Side menu Styles****************************************/
+#sidemenudiv {
+    font-size: 0.8em;
+}
+
+ul#sidemenu {
+    margin: 0;
+    list-style: none;
+    margin: 0px 0px 2px 22px;
+    z-index: 999;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+ul#sidemenu li{
+	display:block;
+	white-space:nowrap;
+	
+	padding:0px;
+}
+
+ul#sidemenu>li{
+	margin:2px 0 0;
+}
+
+ul#sidemenu a:active, ul#sidemenu a:focus{
+	outline-style:none;
+}
+
+ul#sidemenu a{
+	display:block;
+	vertical-align:middle;
+	text-align:left;
+	text-decoration:none;
+	/*font:12px Verdana,Geneva,sans-serif;*/
+	color:#5599ff;
+	cursor:pointer;
+	padding:4px 5px;
+	/*width:200px;*/
+
+}
+
+
+ul#sidemenu li:hover>a,ul#sidemenu li a.pressed{
+	color: #274b70;
+	text-decoration:none;
+}
+
+ul#sidemenu li a:focus{
+	color: #274b70;
+	text-decoration:none;
+}
+
+ul#sidemenu img{
+	border:none;
+vertical-align:middle;
+margin-right:6px;
+}
+ul#sidemenu li.topfirst>a{
+	border-width:0;
+}

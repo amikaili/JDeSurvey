@@ -25,7 +25,7 @@ div.even {
 
 /* Global Underline */
 a{
-	color: #2B6DBC;
+	color: #5599ff;
     text-decoration: none;
 }
 a:hover{
@@ -53,6 +53,7 @@ border:0;
 	font-size: 10pt;
 	list-style-type: none;
 }
+
 
 /* --------------------------------- header styling ---------------------------------------------*/
 .header-cap{
@@ -120,24 +121,34 @@ padding: 2px 2px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 #instructions {
 	
 	margin:0px 0px 10px 0px;
 }
 
 
+
+/* --------------------------------- left/right columns -----------------------------------------*/ 
+.admin-left-column{
+width:225px;
+float:left;
+margin-top:35px;
+margin-left:-100%;
+}
+
+
+
+.left-column div{padding-top:-10px;}
+.left-column div ul li a:hover{color:#004179;}
+.left-column div ul li a{font-size:1.0em;}
+.left-column div h2{margin-bottom:0; color:#004179;}
+.left-column .block  h2{
+color:white;
+}
+
+.right-column2{
+margin-left:240px;
+}
 
 
 .block{
@@ -147,10 +158,15 @@ padding: 2px 2px;
 	font-size:0.8em;
 }
 
+.block ul {
+	list-style-type: square;
+	list-style-position:inside;
+}
 
 .block .noTopMargin div{
 	margin-top:0px;
 }
+
 .right-column .block {
 background:#333;
 margin:4px;
@@ -159,16 +175,29 @@ padding-left:6px;
 }
 
 .block h2{
-font-size:1.1em;
-margin-bottom:10px;
-color:#657D97;
+	width:99.5%;
+	font-size:1.0em;
+	font-weight: normal;
+	padding-bottom:3pt;
+	margin:0px 0px 10px -10px;
+	color:#fcfafd;
+	background:#403f40;
+	padding:4px 7px 4px 7px;
+	border:1px solid #CCC;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.block ul, ol{
+	margin-bottom:5pt;
 }
 
 .right-column .block h2{
 font-size:1.0em;
 margin-bottom:3px;
 margin-top:5px;
-color:#657D97;
+color:#004179;
 }
 
 .block h2.underlined{
@@ -183,7 +212,7 @@ display:block;
 }
 .block h3{
 font-size:0.8em;
-color:#657D97;
+color:#004179;
 padding-bottom:2px;
 margin-bottom:10px;
 margin-top:10px;
@@ -192,7 +221,7 @@ margin-top:10px;
 color:#333;
 display:block;
 font-size:0.8em;
-color:#657D97;
+color:#004179;
 padding-bottom:2px;
 margin-bottom:10px;
 margin-top:10px;
@@ -200,7 +229,7 @@ margin-top:10px;
 
 .block h4{
 font-size:0.8em;
-color:#657D97;
+color:#004179;
 padding-bottom:2px;
 margin-bottom:10px;
 margin-top:10px;
@@ -281,7 +310,7 @@ margin-bottom: -14px;
 color:#333;
 }
 .record-table a:hover{
-color: #FF8C00;
+color: #004179;
 }
 .record-table caption{
 display:none;
@@ -299,7 +328,7 @@ padding:3px 15px 3px 4px;
 .record-table thead tr th{
 padding:2px 4px;
 text-align:left;
-/*background:#657D97;*/
+/*background:#004179;*/
 background:#333;
 font-weight:normal;
 /*border-bottom:3px solid #CCC;*/
@@ -357,7 +386,7 @@ padding-right:0;
 border-right:0;
 }
 .table-pagination .right ol li a:hover{
-color:#FF8C00;
+color:#004179;
 }
 .buttons a, 
 .buttons button{
@@ -408,7 +437,7 @@ color:#666;
 	color:white;
 }
 .right-column .block ul.nested li a:hover{
-	color:#FF8C00;
+	color:#004179;
 }
 
 
@@ -419,7 +448,7 @@ margin: -31px 5px 0 0;
 width:200px;  
 }
 .linkbuttons a{
-color: #657D97;
+color: #004179;
 font-size: 0.9em;
 display:inline;
 }
@@ -432,7 +461,7 @@ display:inline;
 	clear:none;
 	float: right;
 }
-.linkbuttons a:hover, .linkbuttons a:hover{color: #FF8C00;}
+.linkbuttons a:hover, .linkbuttons a:hover{color: #004179;}
 div.fieldsection {
 margin-top:6px;
 /*background-color:yellow;*/
@@ -903,7 +932,7 @@ table.questions-table tbody tr:nth-child(even)    { background-color:#fff; }
 color:#333;
 }
 .questions-table a:hover{
-color: #FF8C00;
+color: #004179;
 }
 .questions-table caption{
 display:none;
@@ -1038,7 +1067,7 @@ width:16px;
 
 .menublock h2{
 	clear:both;
-	color:#FF8C00;
+	color:#004179;
 	padding-bottom:5px;
 	margin-left:5px;
 	font-size: 1em;
@@ -1199,10 +1228,97 @@ a.createIcon:hover {
 }
 
 
+/* --------------------------------- Survey Blocks, blocks in surveys are the same as blocks else where so using naming scheme to keep them separate ------*/
+/* --------------------------------- Clean this up so don't need to do this ---------------------------------*/
+.survey_block {
+	margin:4px 7px 4px 7px;
+	background:#FFF;
+	padding:0px 8px 0px 12px;
+	font-size:0.8em;
+}
 
+.survey_block h2 {
+	font-size:1.1em;
+	margin-bottom:10px;
+	color:#004179;
+}
+
+.survey_block h2.underlined{
+	
+	padding-bottom:2px;
+	border-bottom:1px solid #F68C1F;
+}
+
+.survey_block h2 a{
+color:#333;
+display:block;
+}
+
+.survey_block h3{
+font-size:0.8em;
+color:#004179;
+padding-bottom:2px;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+.survey_block h3 a{
+color:#333;
+display:block;
+font-size:0.8em;
+color:#004179;
+padding-bottom:2px;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+
+.survey_block h4{
+font-size:0.8em;
+color:#004179;
+padding-bottom:2px;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+.survey_block h4 a{
+color:#333;
+}
+
+.survey_block h4.underlined{
+	border-bottom:1px solid #DBDBDB;
+}
+
+
+.survey_block .field span.label {
+display: inline-block;
+padding-right:5px;
+font-weight:bold;
+color:#2b2b2b;
+}
+
+.survey_block .subsection {
+	padding-bottom:10px;
+	margin-bottom:1px;
+}
+
+.survey_block p{
+line-height:1.5em; 
+font:normal 1.0em Arial,Helvetica,sans-serif;
+margin-bottom:5px;
+color:#666;
+}
+
+/*Overwrite normal css*/
+.left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #004179;
+}
+
+/* --------------------------------- Survey Themes (other than standard) ---------------------------------------------*/
 
 .STEEL_BLUE h2 {color:#4F81BD;}
-.STEEL_BLUE .block label.questionText {color:#4F81BD;}
+.STEEL_BLUE .survey_block label.questionText {color:#4F81BD;}
 .STEEL_BLUE .right-navigation li.current{color: white;background-color:#4F81BD;	border: 0px solid #d4d4d4;}
 .STEEL_BLUE .right-navigation li.past a{color: #4F81BD;}
 .STEEL_BLUE .right-navigation li.past a:hover{color: #333;}
@@ -1231,8 +1347,14 @@ a.createIcon:hover {
 .STEEL_BLUE table.questionsMatrix tbody tr td{background:none;}
 .STEEL_BLUE table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.STEEL_BLUE .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #4F81BD;
+}
+
 .DEEP_CHESTNUT h2 {color:#C0504D;}
-.DEEP_CHESTNUT .block label.questionText {color:#C0504D;}
+.DEEP_CHESTNUT .survey_block label.questionText {color:#C0504D;}
 .DEEP_CHESTNUT .right-navigation li.current{color: white;background-color:#C0504D;	border: 0px solid #d4d4d4;}
 .DEEP_CHESTNUT .right-navigation li.past a{color: #C0504D;}
 .DEEP_CHESTNUT .right-navigation li.past a:hover{color: #333;}
@@ -1261,9 +1383,16 @@ a.createIcon:hover {
 .DEEP_CHESTNUT table.questionsMatrix tbody tr td{background:none;}
 .DEEP_CHESTNUT table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.DEEP_CHESTNUT .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #C0504D;
+}
+
+
 
 .SPRING_GREEN h2 {color:#9BBB59;}
-.SPRING_GREEN .block label.questionText {color:#9BBB59;}
+.SPRING_GREEN .survey_block label.questionText {color:#9BBB59;}
 .SPRING_GREEN .right-navigation li.current{color: white;background-color:#9BBB59;	border: 0px solid #d4d4d4;}
 .SPRING_GREEN .right-navigation li.past a{color: #9BBB59;}
 .SPRING_GREEN .right-navigation li.past a:hover{color: #333;}
@@ -1292,9 +1421,14 @@ a.createIcon:hover {
 .SPRING_GREEN table.questionsMatrix tbody tr td{background:none;}
 .SPRING_GREEN table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.SPRING_GREEN .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #9BBB59;
+}
 
 .FRENCH_LILAC h2 {color:#8064A2;}
-.FRENCH_LILAC .block label.questionText {color:#8064A2;}
+.FRENCH_LILAC .survey_block label.questionText {color:#8064A2;}
 .FRENCH_LILAC .right-navigation li.current{color: white;background-color:#8064A2;	border: 0px solid #d4d4d4;}
 .FRENCH_LILAC .right-navigation li.past a{color: #8064A2;}
 .FRENCH_LILAC .right-navigation li.past a:hover{color: #333;}
@@ -1326,9 +1460,14 @@ a.createIcon:hover {
 .FRENCH_LILAC table.questionsMatrix tbody tr td{background:none;}
 .FRENCH_LILAC table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.FRENCH_LILAC .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #8064A2;
+}
 
 .CELESTIAL_BLUE h2 {color:#4BACC6;}
-.CELESTIAL_BLUE .block label.questionText {color:#4BACC6;}
+.CELESTIAL_BLUE .survey_block label.questionText {color:#4BACC6;}
 .CELESTIAL_BLUE .right-navigation li.current{color: white;background-color:#4BACC6;	border: 0px solid #d4d4d4;}
 .CELESTIAL_BLUE .right-navigation li.past a{color: #4BACC6;}
 .CELESTIAL_BLUE .right-navigation li.past a:hover{color: #333;}
@@ -1357,8 +1496,14 @@ a.createIcon:hover {
 .CELESTIAL_BLUE table.questionsMatrix tbody tr td{background:none;}
 .CELESTIAL_BLUE table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.CELESTIAL_BLUE .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #4BACC6;
+}
+
 .PEACH_ORANGE h2 {color:#FF9646;}
-.PEACH_ORANGE .block label.questionText {color:#FF9646;}
+.PEACH_ORANGE .survey_block label.questionText {color:#FF9646;}
 .PEACH_ORANGE .right-navigation li.current{color: white;background-color:#FF9646;	border: 0px solid #d4d4d4;}
 .PEACH_ORANGE .right-navigation li.past a{color: #FF9646;}
 .PEACH_ORANGE .right-navigation li.past a:hover{color: #333;}
@@ -1387,6 +1532,11 @@ a.createIcon:hover {
 .PEACH_ORANGE table.questionsMatrix tbody tr td{background:none;}
 .PEACH_ORANGE table.questionsMatrix tbody tr.even td{background:none;}
 
+/*Overwrite normal css*/
+.PEACH_ORANGE .left-column div.survey_block h2 {
+    margin-bottom: 0;
+    color: #FF9646;
+}
 
 
 

@@ -19,7 +19,7 @@
     <div class="left-column">	
 		
 		
-		<div class="block">
+		<div class="survey_block">
 				<h2><spring:message code="survey_submit_title" htmlEscape="false" /></h2>
 				<div id="instructions">
 					<spring:message code="survey_submit_message" htmlEscape="false"  arguments="${survey.typeName}"/>
@@ -35,7 +35,7 @@
 			
 			<c:forEach items="${surveyPages}" var="page" varStatus="loop">
 				<c:set value="${pageNumb} ${loop.index+1}, ${questionNumLbl}" var="QuestionAndPageNumb"/>
-				<div class="block">
+				<div class="survey_block">
 					<h2>
 						<spring:message code="com.jd.survey.domain.survey.surveypage_label_short" htmlEscape="false"/>
 						<c:out value=" "/><c:out value="${loop.index + 1}"/><c:out value=" "/>

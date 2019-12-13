@@ -60,13 +60,13 @@
     <div id="main-content">	
     			
     	<c:if test="${surveyDefinition.hasLogo}">					
-    	<div class="block">
+    	<div class="survey_block">
     		<spring:url value="/${survey_base_path}/logo/${surveyPage.survey.typeId}" var="logoUrl"/>
     		<img src="${logoUrl}" style="height:40px;"/>
     	</div>							 		
 		</c:if>
 		
-		<div class="block">
+		<div class="survey_block">
 			<h2>
 				<c:out value="${surveyPage.title}"/>	
 			</h2>

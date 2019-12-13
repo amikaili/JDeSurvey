@@ -187,7 +187,7 @@ public class PrivateSurveyController {
 			if (userSurveyEntries == null || userSurveyEntries.size() == 0) {
 				//No User entries for this survey, create a new one
 				Survey survey =surveyService.survey_create(surveyDefinitionId,login,httpServletRequest.getRemoteAddr());
-				return "redirect:/private/" + encodeUrlPathSegment(survey.getId().toString(), httpServletRequest) +"/1";
+				return "surveys/entries";
 			} 
 			//entries found
 			else { 
@@ -195,23 +195,17 @@ public class PrivateSurveyController {
 					//only on entry found
 					Iterator<Survey> it = userSurveyEntries.iterator();
 					Survey survey =it.next(); // get the first and only element in the set
-					
-					
-					
-					/*** ARMAN: Modify behavior to enable edition for all status ***/
-					// if (survey.getStatus() == SurveyStatus.I || survey.getStatus() == SurveyStatus.R) {
+					if (survey.getStatus() == SurveyStatus.I || survey.getStatus() == SurveyStatus.R) {
 						//survey is incomplete or reopened
 						return "redirect:/private/" + encodeUrlPathSegment(survey.getId().toString(), httpServletRequest) +"/1";	
-					// }
-					// else{
+					}
+					else{
 						//List all entries
-						/*
 						uiModel.addAttribute("survey_base_path", "private");
 						uiModel.addAttribute("surveyDefinition", surveyDefinition);
 						uiModel.addAttribute("userSurveyEntries", userSurveyEntries);
 						return "surveys/entries";
-						*/
-					// }
+					}
 				}
 				else {
 					//multiple entries found
@@ -296,8 +290,6 @@ public class PrivateSurveyController {
 			}
 			*/
 			
-			
-			
 			List<SurveyPage> surveyPages = surveyService.surveyPage_getAll(surveyId,messageSource.getMessage(DATE_FORMAT, null, LocaleContextHolder.getLocale()));
 			uiModel.addAttribute("survey_base_path", "private");
 			uiModel.addAttribute("survey", survey);
@@ -358,15 +350,7 @@ public class PrivateSurveyController {
 			if(proceedAction!=null){ //submit button
 				uiModel.asMap().clear();
 				Survey survey = surveyService.survey_submit(surveyId);
-				
-				
-				
-				/*** ARMAN: Modify behavior to enable edition for other status ***/
-				return "redirect:/private";
-				//return "redirect:/private/" + encodeUrlPathSegment(survey.getTypeId().toString(), httpServletRequest) + "?list"; 
-				
-				
-				
+				return "redirect:/private/" + encodeUrlPathSegment(survey.getTypeId().toString(), httpServletRequest) + "?list"; 
 			}
 			else
 			{
